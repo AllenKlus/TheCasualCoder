@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/footer.css">
+	<link rel='icon' href='favicon.ico' type='image/x-icon'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta charset="utf-8" />
+	
+    <title>TheCasualCoder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        main {
+            height: 100%;
+            padding-top: 150px;
+        }
+
+        #main_container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10vh 15% 0 15%;
+            justify-content: space-between;
+            align-items: center;
+
+        
+        }
+        .cards_container {
+            width: 45%;
+            background-color: #c0392b;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 0 15px 3px #888;
+            align-items: center;
+            margin-bottom: 100px;
+            border-radius: 1.5%;
+            
+        }
+        .flex_cards {
+            background-color: #e74c3c;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            margin: 2%;
+            border-radius: 2.5%;
+        }
+        .flex_cards h2 {
+            font-size: 2.5rem;
+        }
+        aside {
+            width: 100%;
+            background-color: #e74c3c;
+            
+        }
+        #aside_container {
+            height: 100%;
+            display: flex;
+        }
+        .aside_items {
+            margin: 5% 15%;
+            background-color: #c0392b;
+            box-shadow: 0 0 10px 1px #8b0000;
+            border-radius: 2.5%;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            padding-bottom: 35px;
+            letter-spacing: .1rem;
+
+        }
+        #descrip {
+            background-color: darkred;
+            margin: 2%;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .aside_items h2 {
+            margin-bottom: 0;
+            margin-left: 2.5rem;
+            margin-right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: underline;
+
+        }
+        .aside_items p {
+            margin-top: 1.5rem;
+            margin-left: 2.5rem;
+            margin-right: 2.5rem;
+            font-size: 2rem;
+            line-height: 55px;
+            padding: 20px;
+            text-align: justify;
+        }
+        #thumb_container {
+            margin: 0 15%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            
+        }
+        .thumb_items {
+            background-color: #e74c3c;
+            box-shadow: inset 0 0 10px 1px #8b0000;
+            border-radius: 100px; 
+            padding: 20px;
+        }
+        .pics {
+            height: 250px;
+            width: 250px;
+        }
+        @media (min-width: 360px) and (max-width: 500px) {
+            #aside_container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 25px 0;
+            }
+            .aside_items {
+                margin: 0 !important;
+                padding: 10px 10px;
+                height: 75% !important;
+
+            }
+            #descrip {
+                margin: 0 !important;
+                
+            }
+            #descrip h2 {
+                margin: 0 !important;
+            }
+            #descrip p {
+                margin: 0 !important;
+                line-height: 1.5rem !important;
+                font-size: 1rem !important;
+            }
+            .pics {
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+        @media (min-width: 500px) and (max-width: 700px) {
+            #aside_container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 25px 0;
+            }
+            .aside_items {
+                margin: 0 !important;
+                padding: 10px 10px;
+                height: 75%;
+                width: 75% !important;
+            }
+            #descrip {
+                margin: 0 !important;
+                
+            }
+            #descrip h2 {
+                margin: 0 !important;
+            }
+            #descrip p {
+                margin: 0 !important;
+                line-height: 1.5rem !important;
+            }
+            .pics {
+                width: 75px !important;
+                height: 75px !important;
+            }
+        }
+        @media (max-width: 700px) {
+            #main_container {
+                margin: 10% 5%;
+            }
+            .cards_container {
+                width: auto;
+                margin-bottom: 50px;
+            }
+            .flex_cards {
+                font-size: 1rem;
+            }
+            #aside_container {
+                width: 100vw;
+            }
+            .aside_items {
+                margin: 5% 0;
+            }
+            #descrip h2 {
+            margin-bottom: 0;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            font-size: 1.8rem;
+            text-decoration: underline;
+            line-height: 40px;
+            }
+            #descrip p {
+            margin-top: 1.5rem;
+            margin-left: .5rem;
+            margin-right: .5rem;
+            font-size: 1rem;
+            line-height: 35px;
+            padding: 20px;
+            text-align: start;
+            }
+            #thumb_container {
+                margin: 2% 0;
+                flex-wrap: nowrap;
+            }
+            .pics {
+                width: 165px;
+                height: 165px;
+            }
+        }
+        @media (min-width: 700px) and (max-width: 820px) {
+            .aside_items {
+                margin: 0% !important;
+                padding: 10px;
+            }
+            #descrip {
+                margin: 0 !important;
+                padding: 1px;
+            }
+            #descrip h2 {
+                margin-left: 1% !important;
+                padding: 1px;
+            }
+            #descrip p {
+                margin-left: 1% !important;
+                margin-right: 0 !important;
+                padding: 0 !important;
+            }
+        }
+        @media (max-width: 900px) {
+            #main_container {
+                margin: 10% 5%;
+            }
+            .cards_container {
+                width: auto;
+                margin-bottom: 50px;
+            }
+            .flex_cards {
+                font-size: 1rem;
+            }
+            #aside_container {
+                width: 100vw;
+            }
+            .aside_items {
+                margin: 5% 0;
+            }
+            #descrip h2 {
+            margin-bottom: 0;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            font-size: 1.8rem;
+            text-decoration: underline;
+            line-height: 40px;
+            }
+            #descrip p {
+            margin-top: 1.5rem;
+            margin-left: .5rem;
+            margin-right: .5rem;
+            font-size: 1rem;
+            line-height: 35px;
+            padding: 20px;
+            text-align: start;
+            }
+            #thumb_container {
+                margin: 2% 0;
+                flex-wrap: nowrap;
+            }
+            .pics {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        @media (max-width: 1165px) {
+            #thumb_container {
+                flex-wrap: nowrap;
+                margin: 2% 0;
+            }
+            .pics {
+                height: 200px;
+                width: 200px;
+            }
+        }
+        @media (max-width: 1200px) {
+            #aside_container {
+                margin: 5% 0%;
+            }
+            .aside_items {
+                margin: 5% 5%;
+            }
+            .pics {
+                height: 200px;
+                width: 200px;
+            }
+        }
+        @media (max-width: 1550px) {
+            .pics {
+                height: 250px;
+                width: 250px;
+            }
+        }
+        @media (max-width: 1808px) {
+            #aside_container {
+                margin: 5% 0%;
+            }
+            .aside_items {
+                margin: 5% 5%;
+            }
+            .pics {
+                height: 200px;
+                width: 200px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <header class='sticky'>
+        <div id='header_container'>
+            <p><a href='index.html' style='color: #ecf0f1;'><strong>Welcome to TheCasualCoder.com!</strong><br><em><span>For all your coding needs</span></em></a></p>
+            
+        <nav>
+            <div id='nav_container'>
+                <ul>
+                    <a href='pgs/python.html'><li>Python</li></a>
+                    <a href='pgs/front_end.html'><li>Front-End Dev</li></a>
+                    <a href='pgs/about.html'><li>About Me</li></a>
+                    <a href='pgs/contact.html'><li>Contact</li></a>
+                </ul>
+            </div>
+            <div id='burger_icon' style='display: none;'>
+                <a href='javascript:void(0);' class='icon' ontouchstart='myFunction' ontouchend='myFunction' onclick='myFunction()'><i class="fas fa-bars fa-2x"></i></a>
+            </div>
+
+        </div>
+        </nav>
+        
+    
+    
+    </header>
+
+    <div id='responsive_links' style='display: none;'>
+        <a href='pgs/python.html'>Python</a>
+        <a href='pgs/front_end.html'>Front-End Dev</a>
+        <a href='pgs/about.html'>About Me</a>
+        <a href='pgs/contact.html'>Contact</a>
+    </div>
+    <main>
+        <div id='main_container'>
+            <div class='cards_container'>
+                <div class='flex_cards'>
+                    <h2>Post 1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus incidunt nostrum accusantium eveniet provident sequi? Voluptate iure sunt amet! Architecto, quae facilis placeat quam iusto eveniet quisquam magni iste ducimus.</p>
+                </div>
+            </div>
+            <div class='cards_container'>
+                <div class='flex_cards'>
+                    <h2>Post 2</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus incidunt nostrum accusantium eveniet provident sequi? Voluptate iure sunt amet! Architecto, quae facilis placeat quam iusto eveniet quisquam magni iste ducimus.</p>
+                </div>
+            </div>
+            <div class='cards_container'>
+                <div class='flex_cards'>
+                    <h2>Post 3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus incidunt nostrum accusantium eveniet provident sequi? Voluptate iure sunt amet! Architecto, quae facilis placeat quam iusto eveniet quisquam magni iste ducimus.</p>
+                </div>
+            </div>
+            <div class='cards_container'>
+                <div class='flex_cards'>
+                    <h2>Post 4</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus incidunt nostrum accusantium eveniet provident sequi? Voluptate iure sunt amet! Architecto, quae facilis placeat quam iusto eveniet quisquam magni iste ducimus.</p>
+                </div>
+            </div>
+        </div>
+        <aside>
+            <div id='aside_container'>
+                <div class='aside_items'>
+                    <div id='descrip'>
+                        <h2>TheCasualCoder is all about...</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellat tempora placeat repellendus labore dicta recusandae laborum! Adipisci, earum. Illum commodi quisquam quae eaque architecto libero ad ratione cupiditate, nemo error ducimus asperiores rem facere harum molestias magnam reiciendis labore aspernatur excepturi, sapiente impedit praesentium vitae ipsam atque. Culpa, blanditiis.</p>
+                    </div>
+                    <div id='thumb_container'>
+
+                        <a href='https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5' target='_blank'><div class='thumb_items'>
+                            
+                            <img src='pics/HTML5_logo.svg' class='pics'>
+
+                        </div></a>
+
+                        <a href='https://www.python.org/' target='_blank'><div class='thumb_items'>
+                            
+                            <img src='pics/python.svg' class='pics'>
+                            
+                        </div></a>
+
+                        <a href='https://www.w3schools.com/css/' target='_blank'><div class='thumb_items'>
+                        
+                            <img src='pics/css3.svg' class='pics'>
+
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <div class='footer_container'>
+            <div id='footer_text'>
+                <p>Made with <i class="fas fa-heart" style='color: #ffb3c8;'></i> and <i class="fas fa-code" style='color: #ffa500;'></i> by Allen Klus</p>
+            </div>
+            <div id='copy'>    
+                    <p>&copy;2018. All Rights Reserved</p>
+                </div>
+            <div id='footer_items_container'>
+                <a href='#'><i class="fab fa-twitter fa-2x footer_icons"></i></a>
+                <a href='#'><i class="fab fa-facebook fa-2x footer_icons"></i></a>
+                <a href='#'><i class="fab fa-github fa-2x footer_icons"></i></a>
+                <a href='#'><i class="fab fa-instagram fa-2x footer_icons"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src='js/header.js'></script>
+
+</body>
+</html>
